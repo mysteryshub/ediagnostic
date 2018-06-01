@@ -1,0 +1,32 @@
+.center {
+    margin: auto;
+    width: 70%;
+    border:3px solid #8AC007;
+    padding: 100px;
+}
+.nee {
+	padding-top:40px;
+	text-align:center;
+	/* background-color:cyan; */
+	text-decoration:none;
+	width:12%;	height:80px;
+	float:left;
+	margin-left:2px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:20px;
+	color:black"
+}
+.con{
+	padding-top:20px;
+	text-align:center;
+	background-color:cyan;
+	text-decoration:none;
+	width:26%;	height:100px;
+	float:left;
+	margin-left:2px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:20px;
+	color:black"
+}

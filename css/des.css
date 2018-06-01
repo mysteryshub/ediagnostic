@@ -1,0 +1,49 @@
+.bkg
+{
+	color:white;
+	font-family: monospace;
+	font-size: 50px;
+	text-align: center;
+	
+}
+.a
+{
+	border-color:no"
+	border-style:none;
+	border-radius:0px;
+}
+.b
+{
+	font-size: 25px;
+	font-family: cursive;
+	font-style: normal;
+	border-color:white;
+	border-width:10px;
+}
+.c
+{
+	float:left;
+	margin-left:70px;
+	margin-top: 70px;
+}
+.d
+{
+	float:left;
+	margin-left:200px;
+	margin-top: 70px;
+}
+
+.s
+{
+	font-size: 15px;
+	font-family: cursive;
+	font-style: normal;
+}
+.k
+{
+	color:black;
+	font-family: cursive;
+	font-size: 25px;
+	font-style: normal;
+	text-align: center;
+}	

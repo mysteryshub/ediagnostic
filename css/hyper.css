@@ -1,0 +1,22 @@
+a:LINK
+{
+	color:blue;
+}
+a:VISITED 
+{
+	color:black;
+	
+}
+a:HOVER
+ {
+	color:orange;
+}
+a:ACTIVE 
+{
+color:yellow;	
+}
+a
+{
+	background-color: blue;
+	text-decoration: blink;
+}

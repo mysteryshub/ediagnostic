@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>REGISTRATION FORM</title>
+<link rel="stylesheet"type="text/css" href="/ediagnostic/css/style.css">
+<script src="/ediagnostic/js/myvalidation.js"></script>
+<script type="text/javascript">
+function main1()
+{
+	
+	 var userpass=document.getElementById("txtpass").value;
+	 var cmb=document.getElementById("cmbcity");
+	 var ctname=cmb.options[cmb.selectedIndex].value;
+	 	 if(checklength(userpass)==false)
+		 {
+		 alert("userpassword must be greater than 6 character");
+		 document.getElementById("txtpass").focus();
+		 return false;
+		 }
+	 	 if(checkCombo(ctname)==false)
+		 {
+		 alert("select at least one city");
+		 return false;
+		 }
+	 	 
+	 	 return true;
+}
+function showcity(city)
+{
+	ot=document.getElementById("textothers");
+	if(city=="others")
+		{
+		ot.style.display="block";
+		}
+	else
+		{
+		ot.style.display="none";
+		}
+	}
+	function checkUserid(uid)
+	{
+		var x;
+		if(XMLHttpRequest)
+			{
+			x=new XMLHttpRequest();
+			}
+		else
+			{
+			x=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		x.onreadystatechange=function()
+		{
+			if(x.readyState==4&&x.status==200)
+				{
+				var info=x.responseText;
+				document.getElementById("msg").immerHTML="<font color='red'>"+info+"</font>";
+				}
+		}
+		x.open("get","/ediagnostic/Registration?ui="+uid,"true");
+		x.send();
+	}
+	
+</script>
+</head>
+<body bgcolor="black">
+<div class="bkg a" style="background-color:yellow;width:850px;height:70px;">DETAILS</div>
+<div style="background-color: red;width:350px;height: 350px;float:left;margin-left: 250px;margin-top: 50px">
+<form  method="post" action="/ecollege/Registration" onsubmit="return main1()">
+<table>
+<tr><td>USER ID</td><td><input type="text" name="txtid" id="txtid"  placeholder="enter your id" onblur="checkUserid(this.value)"></td></tr><h5 id="msg"></h5>
+<tr><td>NAME</td><td><input type="text" name="txtnm" id="txtnm"  placeholder="enter your name"></td></tr>
+<tr><td>EMAIL</td><td><input type="email" name="txteml" id="txteml"  placeholder="enter your email"></td></tr>
+<tr><td>PHONE NO</td><td><input type="number" name="txtno" id="txtno"  placeholder="enter your number"></td></tr>
+<tr><td>ADDRESS</td><td><input type="textarea" name="txtarea"></td></tr>
+<tr><td>REGISTRATION NO</td><td><input type="number" name="txtrno" id="txtrno"  placeholder="enter registration number"></td></tr>
+<tr><td>SKILLS</td><td><input type="text" name="txtskills" id="txtskills"  placeholder="enter your name"></td></tr>
+<tr><td>HIGHER QUALIFICATION</td><td><input type="text" name="txthq" id="txthq"  placeholder="enter your name"></td></tr>
+<tr><td>select area</td><td><select name="area" id="cmbarea" onchange="showarea(this.value)"><option value="default">select your area</option><option value="aet">aetiology</option><option value="car">cardiology</option><option value="chi">chiropody</option><option value="gen">genetics</option></select></td></tr>
+
+
+<tr><td colspan="2"><input type="submit" value="submit"></td></tr>
+
+</table></form></div>
+</body>
+</html>
